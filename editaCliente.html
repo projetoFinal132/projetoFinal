@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Cliente</title>
+    <meta name="author" content="Adtile">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/clienteAltera.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+    <script src="js/responsive-nav.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <a href="#home" class="logo" data-scroll> <img class="img-logo" src="" alt="Imagem da cliente"> </a>
+      <p class="nome-usuario"></p>
+      <nav class="nav-collapse">
+        <ul>
+          <li class="menu-item"><a href="#home" data-scroll>Home</a></li>
+          <li class="menu-item"><a href="editaCliente.html">EDITAR PERFIL</a></li>
+          <li class="menu-item"><a href="#projects" data-scroll>HISTORIO ATENDIMENTO</a></li>
+          <li class="menu-item"><a href="model/desloga.php">DESLOGAR</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+           <div style="margin-top: 15%;" class="formulario">
+               <form id="formCliente" onsubmit="" method="post">
+                    <legend>Alterar dados</legend>
+                    <fieldset>
+                        <input id="nomeAltera" name="nomeAltera"  type="text" placeholder="Alterar nome" required><br>
+                        <input id="emailAltera" name="emailAltera"  type="email" placeholder="Alterar email" required><br>
+                        <input id="senhaAltera" name="senhaAltera"  type="password" placeholder="Alterar senha" required><br>
+                    </fieldset>
+               </form>
+           </div>
+    </main>
+    <script src="js/jquery.js"></script>
+    <script src="js/requisicoesCliente.js"></script>
+    <script src="js/requisicoesAjaxIndex.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/fixed-responsive-nav.js"></script>
+    
+    <script charset="utf-8">
+            //pegar id do cliente
+            //localStorage.clear();
+            //validar se ta logado ou não
+            if (localStorage.length) {
+                //verificaCliente();
+                var cliente = JSON.parse(localStorage.getItem("usuario"));
+                console.log(cliente);
+                $(".nome-usuario").append(" "+cliente.nomeUsuario);
+                $(".img-logo").attr('src',cliente.diretorioFotoPerfil+``+cliente.nomeFotoPerfil);
+            }else{
+                window.location = "http://localhost/sla/login.html"; 
+            }
+            
+            $(document).ready(() => {
+                setTimeout(() => {
+                $(window).width()-1;
+                }, 1000);
+                setTimeout(() => {
+                $(window).width()+1;
+                }, 2000);
+                //passar a pag pra html e  index tbm
+                //pegaProfissionais();
+                //chama para carregar a option do menu
+                //montaOptions();
+
+                $(document).on("change", "#cidade", function(){
+                   // let idCidade = $(this).val();
+                   // console.log(idCidade);
+                   // puxaCidade(idCidade);
+                });
+            });
+    
+           /* function logaCliente(parameter) {  
+                var loc = location.search.substring(1, location.search.length);   
+                var param_value = false;   
+                var params = loc.split("&");   
+                for (i=0; i<params.length;i++) {   
+                    param_name = params[i].substring(0,params[i].indexOf('='));   
+                    if (param_name == parameter) {                                          
+                        param_value = params[i].substring(params[i].indexOf('=')+1)   
+                    }   
+                }   
+                if (param_value) {   
+                    return param_value;   
+                }   
+                else {   
+                    return undefined;   
+                }   
+            }
+            let variavel = logaCliente("idCliente");
+              if(variavel != null){
+                window.history.pushState("object or string", "Title", "http://localhost/sla/cliente.html");
+              }else{
+                window.location = "http://localhost/sla/login.html";
+              }*/
+        </script>
+  </body>
+</html>

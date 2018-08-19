@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="author" content="Adtile">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/login.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+    <script src="js/responsive-nav.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <a href="#home" class="logo" data-scroll>Logo aqui</a>
+      <nav class="nav-collapse">
+        <ul>
+          <li class="menu-item active"><a href="#home" data-scroll>HOME</a></li>
+          <li class="menu-item"><a href="#about" data-scroll>EDITAR PERFIL</a></li>
+          <li class="menu-item"><a href="#projects" data-scroll>HISTORIO ATENDIMENTO</a></li>
+          <li class="menu-item"><a href="#blog" data-scroll>DESLOGAR</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+            <div style="position:fixed; top:40%; left:40%;" class="container-logar">
+                <h3 class="falha-login"></h3>
+                <form onsubmit="logar(event)" id="formLogin" method="post">
+                    <label for="email">Email:</label><br>
+                    <input type="email" name="email" id="email" placeholder="Digite seu email" required><br>
+                    <label for="senha">Senha:</label><br>
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required><br>
+                    <input style="width: 60%;" class="btn-form" type="submit" value="logar">
+                </form>
+            </div>
+    </main>
+    <script src="js/jquery.js"></script>
+    <script src="js/logar.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/fixed-responsive-nav.js"></script>
+    
+    <script charset="utf-8">
+
+           
+
+            $(document).ready(() => {
+              setTimeout(() => {
+              $(window).width()-1;
+              }, 1000);
+              setTimeout(() => {
+              $(window).width()+1;
+              }, 2000);
+               localStorage.clear();
+                /*if(data[0] == 1){
+                            console.log("aeew");
+                            window.location = "cliente.html?idCliente="+data.id_cliente;
+                           // window.location.href = "http://localhost/sla/cliente.html";
+                        }
+                        */
+            });
+    
+        </script>
+  </body>
+</html>

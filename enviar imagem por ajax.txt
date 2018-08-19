@@ -1,0 +1,31 @@
+ $("#formProduto").submit((event)=>{
+            event.preventDefault();
+            let form = document.querySelector("#formProduto");
+            
+            //console.log(form.categoria.options[form.categoria.selectedIndex].value);
+            //console.log(form.img.value);
+            let categoria = form.categoria.options[form.categoria.selectedIndex].value; 
+            let img = $("#img").prop("files")[0];
+            let form_data = new FormData(form);                  // Creating object of FormData class
+            form_data.append('op', 1);              // Adding extra parameters to form_data       
+
+            let request = new XMLHttpRequest();
+            request.open('post','model/cadastrar.php',true);
+            request.send(form_data);
+            request.upload.addEventListener('load',(e)=>{
+                console.log(request.responseText);
+                console.log("deu bom");
+            },false);
+            
+            request.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   let imagem = JSON.parse(this.responseText);
+                   console.log(imagem);
+                   request.abort();
+                }else if(this.status != 200){
+                    console.log("error"+this.responseText);
+                    request.abort();
+                }
+            };
+            
+        });

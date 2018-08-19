@@ -1,0 +1,56 @@
+function pegaApt(parameter) {  
+                var loc = location.search.substring(1, location.search.length);   
+                var param_value = false;   
+                var params = loc.split("&");   
+                for (i=0; i<params.length;i++) {   
+                    param_name = params[i].substring(0,params[i].indexOf('='));   
+                    if (param_name == parameter) {                                          
+                        param_value = params[i].substring(params[i].indexOf('=')+1)   
+                    }   
+                }   
+                if (param_value) {   
+                    return param_value;   
+                }   
+                else {   
+                    return undefined;   
+                }   
+            }
+            let variavel = pegaApt("idCliente");
+              if(variavel != null){
+                window.history.pushState("object or string", "Title", "http://localhost/sla/cliente.html");
+              }else{
+                window.location = "http://localhost/sla/login.html";
+              }
+              //cliente.html?idCliente="+data.id_cliente
+             /* if(data[0] == 1){
+                            console.log("aeew");
+                            window.location = "cliente.html?idCliente="+data.id_apt;
+                           // window.location.href = "http://localhost/sla/cliente.html";
+                        }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let query = location.search.slice(1);
+            let partes = query.split('#');
+            let data = {};
+            partes.forEach(function (parte) {
+                let chaveValor = parte.split('#');
+                let chave = chaveValor[0];
+                let valor = chaveValor[1];
+                data[chave] = valor;
+            });
+            console.log(data);

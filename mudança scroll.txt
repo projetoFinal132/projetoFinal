@@ -1,0 +1,2 @@
+ add essa linha na função que ta na linha 136
+      history.pushState(null, null, toggle.href);

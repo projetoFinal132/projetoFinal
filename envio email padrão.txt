@@ -1,0 +1,32 @@
+<?php if (isset($_SESSION["resultado email"])) { ?>  <p> <?= $_SESSION['resultado email'] ?></p> <?php session_destroy();
+                                                                                                                } ?>
+
+<?php
+    $status = session_status();
+    if($status == PHP_SESSION_NONE){
+        //There is no active session
+        session_start();
+    }
+    $name = strip_tags(htmlspecialchars($_POST['nome']));
+    $email_address = strip_tags(htmlspecialchars($_POST['email']));
+    //$phone = strip_tags(htmlspecialchars($_POST['phone']));
+    $message = strip_tags(htmlspecialchars('deu bom lek'));
+        
+    // Create the email and send the message
+    $email_cliente = $_POST['email'];
+    $comentario_cliente = $_POST['comentario'];
+    $numero_clietne = $_POST['telefone'];
+    $to = 'pedrofc31.31@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+    $email_subject = "Email de cliente";
+    $email_body = "Você recebeu um email de: $email_cliente \n A menssagem foi: \n $comentario_cliente \n Numero do cliente: $numero_clietne";//."Aqui estão os detalhes:\n\nNome: name\n\nEmail: $email_address\n\nMensagem:\nmessage";
+    $headers = "From: $name"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+    $headers .= " Reply-To: $email_address";	
+    if (mail($to,$email_subject,$email_body,$headers)) {
+        //echo 'de bom krai'; 
+        $_SESSION['resultado email'] = 'Email enviado com sussesso!';
+        header("location: ../index.php");
+    }else{
+
+    }
+    
+?>

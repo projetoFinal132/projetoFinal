@@ -1,0 +1,152 @@
+@corDeFundoPadrao: #78053E; 
+@corSecundariaPadrao: lighten(@corDeFundoPadrao, 20%);
+@corLetraPadrao: white;
+@corLetraNormal: #7C6A76;
+
+.img-logo{
+    width: 55px;
+    margin: 15px;
+    margin-left: 35px;
+}
+.bem-vinda{
+    margin-top: 15%;
+    width: 100%;
+    text-align: center;
+    color: @corSecundariaPadrao;
+}
+.container-tipo-busca{
+    margin-top: 10%;
+    width: 95%;
+    background-color: @corDeFundoPadrao;
+    height: 3em;
+    border: 2px solid @corDeFundoPadrao;
+    border-radius: 10px 10px 10px 10px;
+    color: @corLetraPadrao;
+    padding: 0.3em 0.5em;
+}
+.container-dica{
+    float: right;
+    margin-right: 30%;
+}
+.container-resultado{
+    margin-top: 5%;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.profissional{
+    margin: 5% 0% 0% 0%;
+    width: 99%;
+    height: 275px;
+    border: 2px solid @corDeFundoPadrao;
+    border-radius: 10px;
+}
+.profissional>a{
+    text-decoration: none;
+    color: @corSecundariaPadrao;
+}
+.img-profissional{
+    margin-left: 2%;
+    width: 10%;
+    height: 100px;
+    float: left;
+    border-radius: 10px;
+}
+.nome-contato{
+    margin-top: 0%;
+    margin-left: 4%;
+    float: left;
+}
+.telefone-profissional{
+    margin-left: 4%;
+    float: left;
+}
+.nome-profissional{
+    text-align: center;
+    width: 100%;
+}
+.container-estrela{
+    margin-left: 4%;
+}
+.container-area-conhecimento{
+    margin-left: 10%;
+    margin-right: 3%;  
+    margin-top: 2%; 
+    float: left; 
+}
+.container-area-descricao{
+    text-align: center;
+    width: 30%;
+    height: 120px;
+    overflow-y: auto;
+    float: left;
+    overflow: hidden;
+    margin-left: 6%;
+    margin-top: 2%;
+}
+.container-area-descricao>a{
+    text-decoration: none;
+    color: @corSecundariaPadrao;
+    float: right;
+    margin-top: -1%;
+}
+.texto-protifolio{
+    float: left;
+    text-align: center;
+    margin-left: 30%;
+    margin-bottom: 10px;
+}
+.imagens-do-portifolio{
+    width: 100%;
+    float: left;
+    margin-left: 0%;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.imagens-do-portifolio>img{
+    margin-left: 2%;
+    width: 23%;
+    border-radius: 10px;
+}
+.container-resultado>img, .container-resultado>a{
+    width: 23%;
+    margin-left: 2%;
+}
+
+@media(min-width:1400px) and (max-width: 1900px){
+    .container-resultado{
+        height: 800px;
+    }
+}
+
+.containerPopUp{
+    position: fixed;
+    padding-top: 5%;
+    top: 20%;
+    left: 20%;
+    height: 260px;
+    width: 450px;
+    border: 2px solid @corDeFundoPadrao;
+    border-radius: 10px;
+    background-color: #fff;
+}
+#fecharContaienrPop{
+    position: absolute;
+    left: 95%;
+    top: 1%;
+}
+.container-radio{
+    width:100%;
+    margin-left: 1%;
+}
+.container-radio>label, .container-radio>input{
+    float: left;
+}
+.container-radio>label{
+    margin-left: 5%;
+}
+.formPop{
+    margin-left: 5%;
+}

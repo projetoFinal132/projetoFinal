@@ -1,0 +1,127 @@
+
+@corDeFundoPadrao: #78053E ; 
+@corSecundariaPadrao: lighten(@corDeFundoPadrao, 25%);
+@corLetraPadrao: white;
+@corLetraNormal: #7C6A76;
+
+
+.container-profissional{
+    margin-top:8%;
+}
+.img-profissional{
+    float: left;
+    width: 100px;
+    margin: 5px 0px 5px 50px;
+    border-radius: 10px;
+    //border: 2px solid @corDeFundoPadrao;
+}
+.bem-vinda{
+    text-align: center;
+    color: @corSecundariaPadrao;
+}
+.container-descricao{
+    float: right;
+    width: 40%;
+}
+.container-dados{
+    margin-top: 2%;
+    display: table;
+    width: 100%;
+}
+.container-descricao{
+    float: right;
+    margin-right: 10%;
+    height: 200px;
+    width: 33%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 2px solid @corDeFundoPadrao;
+    border-radius: 10px;
+}
+.txt-descricao{
+    text-align: justify;
+    font-size: 105%;
+    width: 98%;
+    height: 96%;
+    border-radius: 10px;
+}
+.titulo-portifolio{
+    .txt-descricao;
+    border: none;
+    font-size: 140%;
+    padding-left: 6%;
+    color: @corDeFundoPadrao;
+}
+.numero-profissional{
+ text-align: left;
+ margin-left: 1%;
+ margin-top: 0%;
+ margin-bottom: 2%;
+ float: left;
+ width: 33%;
+}
+#formAddFoto{
+    margin-left: 6%;
+}
+/*CONTAINER DE FOTOS*/
+.container-portifolio{
+    width: 80%;
+    height: 400px;
+    margin-right: 10%;
+    margin-top: 2%;
+    padding: 1%;
+    padding-left: 3%;
+    border: 2px solid @corDeFundoPadrao;
+    border-radius: 10px;
+    float: right;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container-img-portifolio{
+    width: 204px;
+    height: 204px;
+    float: left;
+    position: relative;
+    margin: 1%;
+    border-radius: 10px;
+    border: 1px solid @corSecundariaPadrao;
+}
+.imagem-portifolio{
+    width: 200px;
+    margin: 1%;
+    height: 200px;
+    border-radius: 10px;
+}
+/*FIM CONTAINER DE FOTOS*/
+.input-img-portifolio{
+    position: absolute;
+    top: 83%;
+    left: 5%;
+    background-color: @corSecundariaPadrao;
+    color: white;
+    border: 2px solid @corDeFundoPadrao;
+    width: 42%;
+}
+.btn-deleta-img-portifolio{
+    .input-img-portifolio;
+    left: 55%;
+}
+#btnFecharContainerAlteraImg{
+    position: absolute;
+    left: 90%;
+    top:0%;
+    font-size: 100%;
+    color: @corDeFundoPadrao;
+}
+#btnFecharContainerAlteraImg:hover{
+    cursor: pointer;
+}
+.container-altera-foto{
+    position: fixed;
+    top: 40%;
+    left: 35%;
+    height: 100px;
+    width: 300px;
+    background-color: #fff;
+    border: 2px solid @corDeFundoPadrao;
+}
